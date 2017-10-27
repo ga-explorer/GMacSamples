@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF3F0953-555E-4BAF-ACD6-4B82326F8836}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BladesLibraryComposer</RootNamespace>
+    <AssemblyName>BladesLibraryComposer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Wolfram.NETLink">
+      <HintPath>..\..\..\..\Program Files\Wolfram Research\Mathematica\11.0\SystemFiles\Links\NETLink\Wolfram.NETLink.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharp\BladeClass\ApplyVersorMainMethodFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\ApplyVersorMethodFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\BilinearProductMainMethodFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\BilinearProductMethodFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\ClassFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\DpDualMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\DpMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\EqualsMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\FactorMainMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\FactorMethodFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\GpFilesGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\GpMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\InvolutionMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\IsZeroMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\MiscMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\NormMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\SelfEgpMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\StaticCodeFileGenerator.cs" />
+    <Compile Include="CSharp\BladeClass\VectorsOpMethodsFileGenerator.cs" />
+    <Compile Include="CSharp\BladesLibrary.cs" />
+    <Compile Include="CSharp\BladesLibraryCodeFileGenerator.cs" />
+    <Compile Include="CSharp\BladesLibraryCodePartGenerator.cs" />
+    <Compile Include="CSharp\BladesLibraryMacroCodeFileGenerator.cs" />
+    <Compile Include="CSharp\BladesLibraryTemplates.cs" />
+    <Compile Include="CSharp\BladesLibUtils.cs" />
+    <Compile Include="CSharp\FactoredBladeClass\ClassFileGenerator.cs" />
+    <Compile Include="CSharp\OutermorphismClass\ApplyMethodFileGenerator.cs" />
+    <Compile Include="CSharp\OutermorphismClass\ClassFileGenerator.cs" />
+    <Compile Include="CSharp\VectorClass\ClassFileGenerator.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryComposerFactory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GMac\GMac\GMac.csproj">
+      <Project>{8943d17a-189f-4ce2-960a-430755f0435b}</Project>
+      <Name>GMac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GMac\IronyGrammars\IronyGrammars.csproj">
+      <Project>{89c1f760-833f-45ba-af7f-74cbdf2042b5}</Project>
+      <Name>IronyGrammars</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GMac\SymbolicInterface\SymbolicInterface.csproj">
+      <Project>{1a829048-079b-4ba4-8354-f5be36946d11}</Project>
+      <Name>SymbolicInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GMac\TextComposerLib\TextComposerLib.csproj">
+      <Project>{52b7a16f-e6c5-4ded-a4b8-9ea6751eab1b}</Project>
+      <Name>TextComposerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GMac\UtilLib\UtilLib.csproj">
+      <Project>{d743aac2-6f5b-4f9f-bde8-366648110f1c}</Project>
+      <Name>UtilLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
